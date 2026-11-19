@@ -1,0 +1,7 @@
+# Runtime dependencies (exact versions this project was tested with).
+# Streamlit Community Cloud installs this file automatically.
+streamlit==1.67.0
+deep-translator==1.11.4
+SpeechRecognition==3.17.0
+gTTS==2.5.4
+requests==2.34.2

@@ -1,0 +1,70 @@
+/* ui/styles.css - custom look for the translator. Loaded once by ui.components.load_css().
+   Palette:  ink #14283C | teal #0E7C86 | mist #F3F6F9 | line #D5DFE7 | slate #5A6C7D
+   Colours are CSS variables so the whole theme can be changed in one place. */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --ink: #14283C;
+  --teal: #0E7C86;
+  --teal-soft: #E3F2F3;
+  --mist: #F3F6F9;
+  --line: #D5DFE7;
+  --slate: #5A6C7D;
+  --card: #FFFFFF;
+}
+
+/* "Nirmala UI" / "Noto Sans" are fallbacks so Indian scripts render well on every OS. */
+html, body, [class*="css"], .stApp {
+  font-family: 'Manrope', 'Noto Sans', 'Nirmala UI', 'Segoe UI', sans-serif;
+}
+
+.block-container { max-width: 1080px; padding-top: 2.2rem; padding-bottom: 4rem; }
+
+/* ---------- Header ---------- */
+.app-title { font-size: 2.1rem; font-weight: 800; color: var(--ink); letter-spacing: -0.02em; margin: 0; }
+.app-subtitle { color: var(--slate); margin: 0.25rem 0 1.4rem 0; font-size: 1rem; max-width: 60ch; }
+
+/* ---------- Tabs ---------- */
+button[data-baseweb="tab"] { font-weight: 600; padding-left: 0.2rem; padding-right: 1.2rem; }
+
+/* ---------- Result card: the memorable element ---------- */
+.result-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--teal);
+  border-radius: 10px;
+  padding: 1.1rem 1.4rem 1.3rem 1.4rem;
+  margin: 1rem 0 0.6rem 0;
+}
+.result-lang { font-size: 1.05rem; font-weight: 700; color: var(--teal); }
+.result-lang span { font-weight: 500; color: var(--slate); margin-left: 0.5rem; font-size: 0.9rem; }
+.result-text { font-size: 1.55rem; line-height: 1.55; color: var(--ink); margin-top: 0.5rem; word-break: break-word; }
+.heard-text { color: var(--slate); font-size: 1.05rem; margin: 0.2rem 0 0.2rem 0; }
+.heard-label { font-weight: 700; color: var(--ink); }
+
+/* ---------- Conversation bubbles ---------- */
+.bubble-row { display: flex; margin: 0.9rem 0 0.2rem 0; }
+.bubble-row.right { justify-content: flex-end; }
+.bubble { max-width: 78%; border-radius: 14px; padding: 0.75rem 1rem; border: 1px solid var(--line); background: var(--card); }
+.bubble-row.left .bubble { border-top-left-radius: 4px; }
+.bubble-row.right .bubble { border-top-right-radius: 4px; background: var(--teal-soft); border-color: #B9DDE0; }
+.bubble-meta { font-size: 0.8rem; font-weight: 700; color: var(--slate); margin-bottom: 0.25rem; }
+.bubble-src { font-size: 0.95rem; color: var(--slate); }
+.bubble-out { font-size: 1.2rem; line-height: 1.5; color: var(--ink); font-weight: 600; margin-top: 0.2rem; word-break: break-word; }
+.bubble-audio-pad { height: 0.2rem; }
+
+/* ---------- Buttons ---------- */
+.stButton > button, .stDownloadButton > button, .stFormSubmitButton > button {
+  border-radius: 8px; font-weight: 600;
+}
+
+/* Respect users who prefer less motion. */
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; } }
+
+/* Phones: let bubbles use more width. */
+@media (max-width: 640px) {
+  .bubble { max-width: 94%; }
+  .result-text { font-size: 1.3rem; }
+  .app-title { font-size: 1.7rem; }
+}
