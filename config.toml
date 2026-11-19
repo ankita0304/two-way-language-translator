@@ -1,0 +1,15 @@
+# Streamlit theme + server settings. Streamlit Community Cloud reads this file automatically.
+
+[theme]
+base = "light"
+primaryColor = "#0E7C86"
+backgroundColor = "#F3F6F9"
+secondaryBackgroundColor = "#FFFFFF"
+textColor = "#14283C"
+font = "sans serif"
+
+[browser]
+gatherUsageStats = false
+
+[client]
+toolbarMode = "minimal"
